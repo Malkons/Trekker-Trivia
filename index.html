@@ -4,119 +4,121 @@
 <head>
     <meta charset="UTF-08">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Cabin|Titillium+Web" rel="stylesheet">
     <script type="text/javascript" src="./assets/javascript/app.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <title>Trivia Game</title>
+    <title>Trekker Trivia</title>
 </head>
 
 <body>
-    <h1>A Trivia Game</h1>
+    <h1>Trekker Trivia</h1>
     <div class="container">
         <div id="timer"></div>
-
+        <br>
+        <br>
+        <br>
         <form id="questions" name="question-form">
 
-            <h3>Who was the Captain of the  USS-Enterprise 1701-D?</h3>
+            <h3>1. Who was the Captain of the USS-Enterprise 1701-D?</h3>
 
-            <input type="radio" name="question1" value="a"> James Kirk
+            <input type="radio" name="question1" value="a">James Kirk &nbsp;
+            <input type="radio" name="question1" value="b">Jean Luc Picard &nbsp;
+            <input type="radio" name="question1" value="c">Rachel Garret &nbsp;
+            <input type="radio" name="question1" value="d">Christopher Pike &nbsp;
             <br>
-            <input type="radio" name="question1" value="b"> Jean Luc Picard
-            <br>
-            <input type="radio" name="question1" value="c"> Rachel Garret
-            <br>
-            <input type="radio" name="question1" value="d"> Christopher Pike
             <br>
 
-            <h3>"Today is a good day to die!" A popular saying by the _________ ? </h3>
+            <hr>
 
-            <input type="radio" name="question2" value="a"> Klingons
-            <br>
-            <input type="radio" name="question2" value="b"> Humans
-            <br>
-            <input type="radio" name="question2" value="c"> Romulans
-            <br>
-            <input type="radio" name="question2" value="d"> Vulcans
-            <br>
+            <h3>2. "Today is a good day to die!" A popular saying by the _________ ? </h3>
 
-            <h3>"Live Long and _________."</h3>
-
-            <input type="radio" name="question3" value="a"> Party 
+            <input type="radio" name="question2" value="a"> Klingons &nbsp;
+            <input type="radio" name="question2" value="b"> Humans &nbsp;
+            <input type="radio" name="question2" value="c"> Romulans &nbsp;
+            <input type="radio" name="question2" value="d"> Vulcans &nbsp;
             <br>
-            <input type="radio" name="question3" value="b"> Buy Property
-            <br>
-            <input type="radio" name="question3" value="c"> Prosper
-            <br>
-            <input type="radio" name="question3" value="d"> Peacefull
             <br>
 
-            <h3>Spock is half Vulcan, half ________ ?</h3>
+            <hr>
 
-            <input type="radio" name="question4" value="a"> Human 
-            <br>
-            <input type="radio" name="question4" value="b"> Klingon
-            <br>
-            <input type="radio" name="question4" value="c"> Romulan
-            <br>
-            <input type="radio" name="question4" value="d"> Andorian
-            <br>
+            <h3>3. "Live Long and _________."</h3>
 
-            <h3>Terok Nor is the Cardassian name for this Space Station</h3>
-
-            <input type="radio" name="question5" value="a"> Starbase 47
+            <input type="radio" name="question3" value="a"> Party &nbsp;
+            <input type="radio" name="question3" value="b"> Buy Property &nbsp;
+            <input type="radio" name="question3" value="c"> Prosper &nbsp;
+            <input type="radio" name="question3" value="d"> Peacefull &nbsp;
             <br>
-            <input type="radio" name="question5" value="b"> Deep Space Station K-7
-            <br>
-            <input type="radio" name="question5" value="c"> Jupiter Station
-            <br>
-            <input type="radio" name="question5" value="d"> Deep Space Nine
             <br>
 
-            <h3>First Contact was made with this alien species</h3>
+            <hr>
 
-            <input type="radio" name="question6" value="a"> Romulan
-            <br>
-            <input type="radio" name="question6" value="b"> Klingon
-            <br>
-            <input type="radio" name="question6" value="c"> Ferengi
-            <br>
-            <input type="radio" name="question6" value="d"> Vulcans
-            <br>
+            <h3>4. Spock is half Vulcan, half ________ ?</h3>
 
-            <h3>Starfleet Headquarters are located in this city</h3>
-
-            <input type="radio" name="question7" value="a"> San Francisco
+            <input type="radio" name="question4" value="a"> Human &nbsp;
+            <input type="radio" name="question4" value="b"> Klingon &nbsp;
+            <input type="radio" name="question4" value="c"> Romulan &nbsp;
+            <input type="radio" name="question4" value="d"> Andorian &nbsp;
             <br>
-            <input type="radio" name="question7" value="b"> Paris
-            <br>
-            <input type="radio" name="question7" value="c"> Munich
-            <br>
-            <input type="radio" name="question7" value="d"> London
             <br>
 
-            <h3>How many Star Trek movies have there been all together?</h3>
+            <hr>
 
-            <input type="radio" name="question8" value="a"> 10
+            <h3>5. Terok Nor is the Cardassian name for this Space Station</h3>
+
+            <input type="radio" name="question5" value="a"> Starbase 47 &nbsp;
+            <input type="radio" name="question5" value="b"> Deep Space Station K-7 &nbsp;
+            <input type="radio" name="question5" value="c"> Jupiter Station &nbsp;
+            <input type="radio" name="question5" value="d"> Deep Space Nine &nbsp;
             <br>
-            <input type="radio" name="question8" value="b"> 15
             <br>
-            <input type="radio" name="question8" value="c"> 13
+
+            <hr>
+
+            <h3>6. First Contact was made with this alien species</h3>
+
+            <input type="radio" name="question6" value="a"> Romulan &nbsp;
+            <input type="radio" name="question6" value="b"> Klingon &nbsp;
+            <input type="radio" name="question6" value="c"> Ferengi &nbsp;
+            <input type="radio" name="question6" value="d"> Vulcans &nbsp;
             <br>
-            <input type="radio" name="question8" value="d"> 8
             <br>
+
+            <hr>
+
+            <h3>7. Starfleet Headquarters are located in this city</h3>
+
+            <input type="radio" name="question7" value="a"> San Francisco &nbsp;
+            <input type="radio" name="question7" value="b"> Paris &nbsp;
+            <input type="radio" name="question7" value="c"> Munich &nbsp;
+            <input type="radio" name="question7" value="d"> London &nbsp;
+            <br>
+            <br>
+
+            <hr>
+
+            <h3>8. How many Star Trek movies have there been all together?</h3>
+
+            <input type="radio" name="question8" value="a"> 10 &nbsp;
+            <input type="radio" name="question8" value="b"> 15 &nbsp;
+            <input type="radio" name="question8" value="c"> 13 &nbsp;
+            <input type="radio" name="question8" value="d"> 8 &nbsp;
+            <br>
+            <br>
+
+            <hr>
             <br>
             <input id="submit" type="submit" value="Done!">
+            <br>
+            <br>
         </form>
 
+        <button id="start">Engage!</button>
 
-        <button id="start">START THE GAME</button>
-
-        
+        <div class="results">
             <div id="correct"></div>
             <div id="wrong"></div>
             <div id="unanswered"></div>
-        
-        
-
+        </div>
     </div>
 </body>
 

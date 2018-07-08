@@ -16,7 +16,7 @@
 
 $(document).ready(function () {
 
-    var timeDown = 120;
+    var timeDown = 60;
 
     var intervalId;
 
@@ -30,9 +30,13 @@ $(document).ready(function () {
 
     $("#timer").hide();
     $("#questions").hide();
-    $("#results").hide();
+    $(".results").hide();
 
     // timer set to countdown from 120.
+    function stopClock() {
+        clearInterval(intervalId);
+    }
+
     function run() {
         clearInterval(intervalId);
         intervalId = setInterval(decrement, 1000);
@@ -41,7 +45,10 @@ $(document).ready(function () {
         timeDown--;
         $("#timer").html("Time Remaining: " + timeDown);
 
-        if(timeDown === 0) {
+        if (timeDown === 0) {
+            $("#questions").hide();
+            $("#timer").hide();
+            stopClock();
             checkAnswers();
             displayResults();
         }
@@ -65,108 +72,110 @@ $(document).ready(function () {
 
 
     // TODO: Submit Button
-    $("#submit").on("click", function () {
+    $("#submit").on("click", function (event) {
+        event.preventDefault();
         $("#questions").hide();
-       checkAnswers();
-       displayResults();
-       
-
+        stopClock();
+        checkAnswers();
+        displayResults();
     });
 
     // TODO: check User Answers with Correct Answers
     function checkAnswers() {
+        console.log(document.forms["question-form"]);
+        var q1 = document.forms["question-form"]["question1"].value;
+        var q2 = document.forms["question-form"]["question2"].value;
+        var q3 = document.forms["question-form"]["question3"].value;
+        var q4 = document.forms["question-form"]["question4"].value;
+        var q5 = document.forms["question-form"]["question5"].value;
+        var q6 = document.forms["question-form"]["question6"].value;
+        var q7 = document.forms["question-form"]["question7"].value;
+        var q8 = document.forms["question-form"]["question8"].value;
 
-        var q1 = document.forms["question-form"]["q1"].value;
-        var q2 = document.forms["question-form"]["q2"].value;
-        var q3 = document.forms["question-form"]["q3"].value;
-        var q4 = document.forms["question-form"]["q4"].value;
-        var q5 = document.forms["question-form"]["q5"].value;
-        var q6 = document.forms["question-form"]["q6"].value;
-        var q7 = document.forms["question-form"]["q7"].value;
-        var q8 = document.forms["question-form"]["q8"].value;
+        var correctAnswers = ['b', 'a', 'c', 'a', 'd', 'd', 'a', 'c'];
 
-        var correctAnswers = [b, a, c, a, d, d, a, c];
         // question 1
-        if (q1 == correctAnswers[0]) {
+        $("input:radio[name='question-form']").is(":checked");
+        if (q1 === correctAnswers[0]) {
             correct++;
-        } else if (q8 != correctAnswers[0]) {
-            wrong++;
-        } else {
+        } else if (q1 == false) {
             unanswered++;
-        }
+        } else
+            wrong++;
 
         // question 2
-        if (q2 == correctAnswers[1]) {
+        $("input:radio[name='question-form']").is(":checked");
+        if (q2 === correctAnswers[1]) {
             correct++;
-        } else if (q2 != correctAnswers[1]) {
-            wrong++;
-        } else {
+        } else if (q2 == false) {
             unanswered++;
-        }
+        } else
+            wrong++;
 
         // question 3
-        if (q3 == correctAnswers[2]) {
+        $("input:radio[name='question-form']").is(":checked");
+        if (q3 === correctAnswers[2]) {
             correct++;
-        } else if (q3 != correctAnswers[2]) {
-            wrong++;
-        } else {
+        } else if (q3 == false) {
             unanswered++;
-        }
+        } else
+            wrong++;
 
         // question 4
-        if (q4 == correctAnswers[3]) {
+        $("input:radio[name='question-form']").is(":checked");
+        if (q4 === correctAnswers[3]) {
             correct++;
-        } else if (q4 != correctAnswers[3]) {
-            wrong++;
-        } else {
+        } else if (q4 == false) {
             unanswered++;
-        }
+        } else
+            wrong++;
 
         // question 5
-        if (q5 == correctAnswers[4]) {
+        $("input:radio[name='question-form']").is(":checked");
+        if (q5 === correctAnswers[4]) {
             correct++;
-        } else if (q5 != correctAnswers[4]) {
-            wrong++;
-        } else {
+        } else if (q5 == false) {
             unanswered++;
-        }
+        } else
+            wrong++;
 
         // question 6
-        if (q6 == correctAnswers[5]) {
+        $("input:radio[name='question-form']").is(":checked");
+        if (q6 === correctAnswers[5]) {
             correct++;
-        } else if (q6 != correctAnswers[5]) {
-            wrong++;
-        } else {
+        } else if (q6 == false) {
             unanswered++;
-        }
+        } else
+            wrong++;
 
         // question 7
-        if (q7 == correctAnswers[6]) {
+        $("input:radio[name='question-form']").is(":checked");
+        if (q7 === correctAnswers[6]) {
             correct++;
-        } else if (q7 != correctAnswers[6]) {
-            wrong++;
-        } else {
+        } else if (q7 == false) {
             unanswered++;
-        }
+        } else
+            wrong++;
 
         // question 8
-        if (q8 == correctAnswers[7]) {
+        $("input:radio[name='question-form']").is(":checked");
+        if (q8 === correctAnswers[7]) {
             correct++;
-        } else if (q8 != correctAnswers[7]) {
-            wrong++;
-        } else {
+        } else if (q8 == false) {
             unanswered++;
-        }
+        } else
+            wrong++;
     }
 
     // TODO: display answers
     function displayResults() {
-        $("#correct").html("correct: " + correct);
-        $("#wrong").html("wrong: " + wrong);
-        $("#unanswered").html("unanswered: " + unanswered);
-        console.log(correct);
-        console.log(wrong);
-        console.log(unanswered);
+        $(".results").show();
+        $("#timer").hide();
+        $("#correct").html("Correct: " + correct);
+        $("#wrong").html("Wrong: " + wrong);
+        $("#unanswered").html("Unanswered: " + unanswered);
+
+
     }
 
 });
