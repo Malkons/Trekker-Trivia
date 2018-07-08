@@ -1,33 +1,12 @@
-/*  1. Countdown Timer:
-        a. Start timer at 120 seconds
-        b. once the timer reaches 0 stop timer
-        c. submit form information
-    2.  Submit Button:
-        a. submit form information
-        b. calculates the correct/wrong/unanswered questions
-        c. shows results of quiz
-    3. Start Button:
-        a. loads the form
-        b. starts the Countdown Timer
-    4. <div> Container:
-        a. replace contents with a div with a border that conatians resutls of quiz
-        b. has the start button on it to restart quiz
-        c. hide the questions and the timer. click start button, unhide questions and timer, and start timer  */
-
 $(document).ready(function () {
 
     var timeDown = 60;
-
     var intervalId;
-
     var correct = 0;
-
     var wrong = 0;
-
     var unanswered = 0;
 
-
-
+    //set up start page
     $("#timer").hide();
     $("#questions").hide();
     $(".results").hide();
@@ -54,24 +33,21 @@ $(document).ready(function () {
         }
     }
 
-
-    // TODO: Reset Function
+    // Reset Function
     function reset() {
         $("#timer").hide();
         $("#questions").hide();
     }
 
-    // TODO: Start Button
+    // Start Button
     $("#start").on("click", function () {
         run();
         $("#start").hide();
         $("#timer").show();
         $("#questions").show();
-
     });
 
-
-    // TODO: Submit Button
+    // Submit Button
     $("#submit").on("click", function (event) {
         event.preventDefault();
         $("#questions").hide();
@@ -80,9 +56,9 @@ $(document).ready(function () {
         displayResults();
     });
 
-    // TODO: check User Answers with Correct Answers
+    // check User Answers with Correct Answers
     function checkAnswers() {
-        console.log(document.forms["question-form"]);
+        
         var q1 = document.forms["question-form"]["question1"].value;
         var q2 = document.forms["question-form"]["question2"].value;
         var q3 = document.forms["question-form"]["question3"].value;
@@ -167,15 +143,12 @@ $(document).ready(function () {
             wrong++;
     }
 
-    // TODO: display answers
+    // display answers
     function displayResults() {
         $(".results").show();
         $("#timer").hide();
         $("#correct").html("Correct: " + correct);
         $("#wrong").html("Wrong: " + wrong);
         $("#unanswered").html("Unanswered: " + unanswered);
-
-
     }
-
 });
