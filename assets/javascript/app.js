@@ -11,11 +11,11 @@ $(document).ready(function () {
     $("#questions").hide();
     $(".results").hide();
 
-    // timer set to countdown from 120.
+    // stop timer funtion
     function stopClock() {
         clearInterval(intervalId);
     }
-
+    // timer set to countdown from 120.
     function run() {
         clearInterval(intervalId);
         intervalId = setInterval(decrement, 1000);
@@ -33,13 +33,13 @@ $(document).ready(function () {
         }
     }
 
-    // Reset Function
+    // reset function
     function reset() {
         $("#timer").hide();
         $("#questions").hide();
     }
 
-    // Start Button
+    // start button
     $("#start").on("click", function () {
         run();
         $("#start").hide();
@@ -47,7 +47,7 @@ $(document).ready(function () {
         $("#questions").show();
     });
 
-    // Submit Button
+    // submit button
     $("#submit").on("click", function (event) {
         event.preventDefault();
         $("#questions").hide();
@@ -56,7 +56,7 @@ $(document).ready(function () {
         displayResults();
     });
 
-    // check User Answers with Correct Answers
+    // check User answers with correct answers
     function checkAnswers() {
         
         var q1 = document.forms["question-form"]["question1"].value;
