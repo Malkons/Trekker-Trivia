@@ -59,6 +59,7 @@ $(document).ready(function () {
     // check User answers with correct answers
     function checkAnswers() {
         
+        // grabs answers from the form and stores them in variables 
         var q1 = document.forms["question-form"]["question1"].value;
         var q2 = document.forms["question-form"]["question2"].value;
         var q3 = document.forms["question-form"]["question3"].value;
@@ -68,16 +69,17 @@ $(document).ready(function () {
         var q7 = document.forms["question-form"]["question7"].value;
         var q8 = document.forms["question-form"]["question8"].value;
 
+        // answer key
         var correctAnswers = ['b', 'a', 'c', 'a', 'd', 'd', 'a', 'c'];
 
         // question 1
-        $("input:radio[name='question-form']").is(":checked");
-        if (q1 === correctAnswers[0]) {
-            correct++;
-        } else if (q1 == false) {
-            unanswered++;
-        } else
-            wrong++;
+        $("input:radio[name='question-form']").is(":checked"); // check for answer, if there is no answer, return false
+        if (q1 === correctAnswers[0]) { //if there is an answer and its equal to the first index in the correctAnswer array
+            correct++;  // increment correct by 1
+        } else if (q1 == false) { // if the answer is false
+            unanswered++; // increment unaswered by 1
+        } else // if not false and not equal to the index in the array, 
+            wrong++; // increment wrong by 1
 
         // question 2
         $("input:radio[name='question-form']").is(":checked");
@@ -143,7 +145,7 @@ $(document).ready(function () {
             wrong++;
     }
 
-    // display answers
+    // display answers function
     function displayResults() {
         $(".results").show();
         $("#timer").hide();
